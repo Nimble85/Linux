@@ -1,0 +1,11 @@
+$ORIGIN .
+$TTL 86400      ; 1 day
+_sites.office.lan       IN SOA  ns1.office.lan. root.office.lan. (
+                                200110223  ; serial
+                                28800      ; refresh (8 hours)
+                                7200       ; retry (2 hours)
+                                2419200    ; expire (4 weeks)
+                                86400      ; minimum (1 day)
+                                )
+                        NS      ns1.office.lan.
+$ORIGIN _tcp.Default-First-Site-Name._sites.office.lan.

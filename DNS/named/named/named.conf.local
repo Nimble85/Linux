@@ -1,0 +1,79 @@
+zone "office.lan" {
+    type master;
+    file "/etc/named/zones/db.office.lan"; # zone file path
+};
+
+
+#zone "nyc3.example.com" {
+#    type master;
+#    file "/etc/named/zones/db.nyc3.example.com"; # zone file path
+#};
+
+
+zone "128.10.in-addr.arpa" {
+    type master;
+    file "/etc/named/zones/db.10.128";  # 10.128.0.0/16 subnet
+    };
+
+
+
+// Active Directory - _msdcs
+zone "_msdcs.office.lan" {
+        type master;
+        allow-update {trasted;};
+        check-names ignore;
+        file "/etc/named/dynamic/_msdcs.office.lan";
+};
+
+// Active Directory - _sites
+zone "_sites.office.lan" {
+        type master;
+        allow-update {trasted;};
+        check-names ignore;
+        file "/etc/named/dynamic/_sites.office.lan";
+};
+
+// Active Directory - _tcp
+zone "_tcp.office.lan" {
+        type master;
+        allow-update {trasted;};
+        check-names ignore;
+        file "/etc/named/dynamic/_tcp.office.lan";
+};
+
+// Active Directory - _udp
+zone "_udp.office.lan" {
+        type master;
+        allow-update {trasted;};
+        check-names ignore;
+        file "/etc/named/dynamic/_udp.office.lan";
+};
+
+// Active Directory - DomainDnsZones
+zone "DomainDnsZones.office.lan" {
+        type master;
+        allow-update {trasted;};
+        check-names ignore;
+        file "/etc/named/dynamic/DomainDnsZones.office.lan";
+};
+
+// Active Directory - ForestDnsZones
+zone "ForestDnsZones.office.lan" {
+        type master;
+        allow-update {trasted;};
+        check-names ignore;
+        file "/etc/named/dynamic/ForestDnsZones.office.lan";
+};
+
+zone "test.local" {
+        type master;
+        allow-update {trasted;};
+        file "/etc/named/zones/db.office.lan";
+};
+
+
+zone "10.168.192.in-addr.arpa" {
+        type master;
+        allow-update {trasted;};
+        file "/etc/named/zones/db.10.128";
+};

@@ -1,0 +1,47 @@
+DNS (Centos 7)	IP:10.128.10.11		HOSTNAME:ns1.office.lan								 Gateway:10.128.10.11
+Client (Win10)  IP:10.128.200.102	HOSTNAME:host2		PreferDNS:10.128.10.11			 Gateway:10.128.10.11
+AD (WinSer16)   IP:10.128.100.101	HOSTNAME:host1		PreferDNS:127.0.0.1/10.128.10.11 Gateway:10.128.10.11
+
+
+nmtui - lan util
+dig office.lan			check DNS in Centos
+dig office.lan.			check DNSin Centos
+dig host1.office.lan	check DNS in Centos
+dig host2.lan			check DNS in Centos
+nslookup office.lan		check DNS in Windows
+
+
+systemctl named restart
+
+
+/etc/named.config
+    /named/named.config.local
+          /dynamic/
+		  /zones/
+
+
+
+https://www.digitalocean.com/community/tutorials/how-to-configure-bind-as-a-private-network-dns-server-on-centos-7
+http://www.lissyara.su/articles/freebsd/programms/bind+ad/
+https://habr.com/ru/post/245857/
+
+name AD is "office.lan"
+You need instal ADDS & DNS in Windows Server also.
+
+
+===========Install_bind===============================
+sudo yum update && upgrade
+sudo yum install bind bind-utils
+sudo vim /etc/named.conf
+
+acl "trusted" {
+        10.128.10.11;    # ns1 - can be set to localhost
+        10.128.20.12;    # ns2
+        10.128.100.101;  # host1
+        10.128.200.102;  # host2
+};
+
+
+Check the Firewall Status:
+sudo firewall-cmd --state
+sudo systemctl stop firewalld

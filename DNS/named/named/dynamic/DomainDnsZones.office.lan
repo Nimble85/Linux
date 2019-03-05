@@ -1,0 +1,11 @@
+$ORIGIN .
+$TTL 86400      ; 1 day
+DomainDnsZones.office.lan    IN SOA  squid.office.lan. root.office.lan. (
+                                200110220  ; serial
+                                28800      ; refresh (8 hours)
+                                7200       ; retry (2 hours)
+                                2419200    ; expire (4 weeks)
+                                86400      ; minimum (1 day)
+                                )
+                        NS      ns1.office.lan.
+$ORIGIN DomainDnsZones.office.lan.

@@ -1,0 +1,16 @@
+$TTL    604800
+@       IN      SOA    ns1.office.lan. admin.office.loc. (
+                              3         ; Serial
+                         604800         ; Refresh
+                          86400         ; Retry
+                        2419200         ; Expire
+                         604800 )       ; Negative Cache TTL
+; name servers
+      IN      NS      ns1.office.lan.
+
+
+; PTR Records
+11.10   IN      PTR     ns1.office.lan.    ; 10.128.10.11
+101.100 IN      PTR     host1.office.lan.  ; 10.128.100.101
+102.200 IN      PTR     host2.office.lan.  ; 10.128.200.102
+~
