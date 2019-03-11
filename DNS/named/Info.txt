@@ -20,7 +20,6 @@ systemctl named restart
 		  /zones/
 
 
-
 https://www.digitalocean.com/community/tutorials/how-to-configure-bind-as-a-private-network-dns-server-on-centos-7
 http://www.lissyara.su/articles/freebsd/programms/bind+ad/
 https://habr.com/ru/post/245857/
