@@ -11,7 +11,7 @@ dig host2.lan			check DNS in Centos
 nslookup office.lan		check DNS in Windows
 
 
-systemctl named restart
+systemctl restart named
 
 
 /etc/named.config
